@@ -125,7 +125,7 @@ def add_member(request):
     if member_serializer.is_valid():
         member_data = member_serializer.save()
         payment_details = []
-        for year in range(member_data.joining_date.year, datetime.now().year):
+        for year in range(member_data.joining_date.year, datetime.now().year+1):
             payment_data = {
                 'member': member_data.id,
                 'year': year,
